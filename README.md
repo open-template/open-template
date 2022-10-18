@@ -13,8 +13,31 @@ scl-lib
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=lib-opentemplate%3A%40opentemplate%2Fscl-lib&metric=coverage)](https://sonarcloud.io/summary/new_code?id=lib-opentemplate%3A%40opentemplate%2Fscl-lib)
 <!-- [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fromdhanisam%2Flib.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fromdhanisam%2Flib?ref=badge_shield) -->
 
-#### How to consume this module
+## Usage
 
-```sh
+### Install:
+
+```
 npm i @opentemplate/scl-lib
 ```
+
+### API Reference:
+
+* [cxsd](https://www.npmjs.com/package/cxsd)
+* [jsonix](https://github.com/highsource/jsonix)
+
+### Supported Versions
+
+Information about supported @opentempl/scl-lib versions.
+
+| Version               | Supported             |  Scope        |
+| -------               | ------------------    | -------       |
+| < 0.1.24              | :x:                   | opentempl     |
+| > 0.1.24 & < 0.1.32   | :white_check_mark:    | opentempl     |
+
+We published 0.2.0 to npm as @opentemplate/scl-lib and will continue to publish updates there.
+
+| Version               | Supported             |  Scope        |
+| -------               | ------------------    | -------       |
+| > 0.2.0               | :white_check_mark:    | opentemplate  |
+
