@@ -1,0 +1,45 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "importHelpers": true,
+    "types": [
+      "jest"
+    ],
+    "paths": {
+      "scllib": [
+        "dist/scllib",
+        "dist/scllib/scllib"
+      ],
+      "@Model/*": ["projects/scllib/src/lib/xmlns/*"]
+    },
+    "target": "ES2015",
+    "module": "ES2020",
+    "typeRoots": [
+      "node_modules/@types",
+      "projects/scllib/src/@types"
+    ],
+    "lib": ["es6", "dom"]
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "preserveSymlinks": true,
+    "strictTemplates": true
+  }
+}

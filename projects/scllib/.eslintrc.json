@@ -1,0 +1,55 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "overrides": [
+    {
+      "files": ["src/lib/**/*.spec.ts", "src/lib/**/*.d.ts"],
+      "extends": [
+      ]
+    }
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "@angular-eslint"
+  ],
+  "ignorePatterns": [
+    "**/*.html",
+    "src/lib/xmlns/**/*.ts",
+    "src/lib/mappings/*.js",
+    "src/lib/compiler/**.java"
+  ],
+  "rules": {
+    "@angular-eslint/component-selector": [
+      "error",
+      {
+        "type": "element",
+        "prefix": [ "t", "app", "template", "opentempl" ],
+        "style": "kebab-case"
+      }
+    ],
+    "@angular-eslint/directive-selector": [
+      "error",
+      {
+        "type": "attribute",
+        "prefix": [ "t", "app", "template", "opentempl" ],
+        "style": "camelCase"
+      }
+    ],
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "no-case-declarations": "off",
+    "no-empty-function": "off",
+    "@typescript-eslint/no-empty-function": "off"
+  }
+  
+}

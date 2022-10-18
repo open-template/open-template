@@ -1,0 +1,20 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "extends": "./tsconfig.lib.json",
+  "compilerOptions": {
+    "declarationMap": false,
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@Model/*": ["src/lib/xmlns/*"]
+    }
+  },
+  "angularCompilerOptions": {
+    "compilationMode": "partial",
+    "annotateForClosureCompiler": true,
+    "skipTemplateCodegen": true,
+    "strictMetadataEmit": true,
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true,
+    "enableResourceInlining": true
+  },
+}

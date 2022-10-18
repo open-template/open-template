@@ -1,0 +1,81 @@
+{
+  "name": "lib-opentemplate",
+  "version": "0.1.32",
+  "license": "MIT",
+  "author": {
+    "name": "Samir Romdhani",
+    "email": "samir.romdhani1994@gmail.com"
+  },
+  "homepage": "https://github.com/romdhanisam/open-template#readme",
+  "scripts": {
+    "ng": "ng",
+    "build": "ng build",
+    "lint": "ng lint",
+    "build-lib": "ng build --project scllib --configuration production",
+    "package-lib": "ng-packagr -p projects/scllib/ng-package.json",
+    "test": "cd projects/scllib && npx jest --no-cache --coverage -c jest.config.js",
+    "patch": "grunt patch",
+    "minor": "grunt minor",
+    "major": "grunt major",
+    "bump-patch": "grunt bump-patch",
+    "bump-minor": "grunt bump-minor",
+    "bump-major": "grunt bump-major",
+    "sonar-scanner": "node_modules/sonar-scanner/bin/sonar-scanner"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romdhanisam/open-template.git"
+  },
+  "keywords": [
+    "opentemplate",
+    "scl",
+    "iec",
+    "61850",
+    "xml",
+    "json",
+    "angular"
+  ],
+  "bugs": {
+    "url": "https://github.com/romdhanisam/open-template/issues"
+  },
+  "dependencies": {
+    "@angular/common": "^14.1.0",
+    "@angular/compiler": "^14.1.0",
+    "@angular/core": "^14.2.0",
+    "@angular/forms": "^14.1.0",
+    "@angular/platform-browser": "^14.1.0",
+    "@angular/platform-browser-dynamic": "^14.1.0",
+    "@angular/router": "^14.1.0",
+    "rxjs": "~7.5.0",
+    "tslib": "^2.4.0",
+    "zone.js": "~0.11.4"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^14.1.3",
+    "@angular-eslint/builder": "14.0.3",
+    "@angular-eslint/eslint-plugin": "14.0.3",
+    "@angular-eslint/eslint-plugin-template": "14.0.3",
+    "@angular-eslint/schematics": "14.0.3",
+    "@angular-eslint/template-parser": "14.0.3",
+    "@angular/cli": "~14.1.3",
+    "@angular/compiler-cli": "^14.1.0",
+    "@types/estree": "^1.0.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^18.7.14",
+    "@typescript-eslint/eslint-plugin": "5.29.0",
+    "@typescript-eslint/parser": "5.29.0",
+    "eslint": "^8.18.0",
+    "grunt-bump": "0.8.0",
+    "jasmine-core": "~4.2.0",
+    "jest": "^28.1.3",
+    "jest-environment-jsdom": "^28.1.3",
+    "jest-preset-angular": "^12.2.0",
+    "ng-packagr": "^14.1.0",
+    "sonar-scanner": "^3.1.0",
+    "ts-jest": "^28.0.8",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.4.0",
+    "typescript": "~4.7.2"
+  }
+}
