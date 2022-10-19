@@ -21,9 +21,9 @@ scl-lib
 npm i @opentemplate/scl-lib
 ```
 
-![lib screenshot](../../assets/img/lib-v0.2.0.png)
+![lib screenshot](https://raw.githubusercontent.com/romdhanisam/open-template/v0.2.2/assets/img/lib-v0.2.0.png)
 ##### Context
-![context screenshot](../../assets/img/demo/jsonix-context.png)
+![context screenshot](https://raw.githubusercontent.com/romdhanisam/open-template/v0.2.2/assets/img/demo/jsonix-context.png)
 
 ##### Usage
 You can import the library files from TypeScript:
@@ -57,7 +57,7 @@ const scl: _SCLType = {
 ...
 this.scllibService.marshalDocument({SCL: scl})
 ```
-![marshalDocument screenshot](../../assets/img/demo/marshall.png)
+![marshalDocument screenshot](https://raw.githubusercontent.com/romdhanisam/open-template/v0.2.2/assets/img/demo/marshall.png)
 ---- 
 ### API Reference:
 ### [Jsonix](https://github.com/highsource/jsonix)
