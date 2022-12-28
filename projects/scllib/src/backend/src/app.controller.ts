@@ -4,11 +4,12 @@ import { Response } from "express";
 import { AppService } from './app.service';
 // import {ApiConsumes,} from "@nestjs/swagger";
 
-import { _SCLType } from './action/xmlns/SCL';
-import { ScllibServiceRest } from './action/scllib.service';
+// import { _SCLType } from './action/xmlns/SCL';
+// import { ScllibServiceRest } from './action/scllib.service';
 
-// import { _SCLType } from '@opentemplate/scl-lib';
+import { _SCLType } from '@opentemplate/scl-lib';
 // import { ScllibServiceRest } from '@opentemplate/scl-lib';
+import { ScllibServiceRest } from '@opentemplate/scl-lib/esm2020/lib/scllib.serviceRest';
 
 const namespaces: any = {
   namespacePrefixes: {

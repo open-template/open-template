@@ -28,7 +28,7 @@
 		"xmldom" : ">=0.1.21",
 		"xmlhttprequest" : "1.x.x",
     "@opentempl/jsonix": "^3.0.0-next.0",
-    "@opentemplate/scl-lib": "^0.2.4-0",
+    "@opentemplate/scl-lib": "^0.2.4-rc.1",
     "flatted": "^3.2.7",
     "node-fetch": "^2.6.1",
     "reflect-metadata": "^0.1.13",
