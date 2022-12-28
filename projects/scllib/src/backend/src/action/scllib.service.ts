@@ -1,18 +1,17 @@
 // SPDX-FileCopyrightText: 2022 Samir Romdhani <samir.romdhani1994@gmail.com>
 //
 // SPDX-License-Identifier: MIT license
-import { Injectable } from '@nestjs/common';
+
 // import { Injectable } from '@angular/core';
+import { Injectable } from '@nestjs/common';
+/// <amd-dependency path="@opentempl/jsonix" />
 import { Jsonix } from '@opentempl/jsonix';
 import { Observable } from 'rxjs';
 import { _SCLType } from './xmlns/SCL';
-// import { Module } from './mappings/$.js';
-// import * as module from "./mappings/$";
-// const Module = require("./mappings/$");
-// import * as Module from "./mappings/$";
 // import Module from './mappings/$';
-const Module = require('./mappings/$');
-// import schemas from './mappings/$';
+// const Module = require('./mappings/$');
+// import * as Module from "./mappings/$";
+import { Module } from "./mappings/$";
 
 const namespaces: any = {
   namespacePrefixes: {
@@ -25,25 +24,22 @@ const namespaces: any = {
 /**
  * Generic Interface
  */
-export interface IType {
+interface IType {
   [key: string]: _SCLType;
 }
 
 /**
  * Main Service
  */
-// @Injectable({
-//   providedIn: 'root'
-// })
 @Injectable()
-export class ScllibService {    
-  
+export class ScllibServiceRest {
+
   /* eslint-disable @typescript-eslint/no-explicit-any */
-  public context: any;// = new Jsonix.Context([Module.$],namespace);
+  public context: any;
   /* eslint-disable @typescript-eslint/no-explicit-any */
-  public marshaller: any;// = this.context.createMarshaller();
+  public marshaller: any;
   /* eslint-disable @typescript-eslint/no-explicit-any */
-  public unmarshaller: any;// = this.context.createUnmarshaller();
+  public unmarshaller: any;
   
   /**
    * Init Context - Compiler
@@ -54,32 +50,22 @@ export class ScllibService {
     if(namespace != undefined && namespace != null) {
       this.context = new Jsonix.Context([Module.$],namespace);
     } else {
-      this.context = new Jsonix.Context([Module.$]); 
+      this.context = new Jsonix.Context([Module.$, namespaces]); 
     }
     this.marshaller = this.context.createMarshaller();
     this.unmarshaller = this.context.createUnmarshaller();
-    // console.info('@@@@ scl-lib @@@@ context : ',this.context);
-    // console.info('@@@@ scl-lib @@@@ marshaller : ',this.marshaller);
-    // console.info('@@@@ scl-lib @@@@ unmarshaller : ',this.unmarshaller);
+    console.info('@@@@ scl-lib @@@@ context : ',this.context);
+    console.info('@@@@ scl-lib @@@@ marshaller : ',this.marshaller);
+    console.info('@@@@ scl-lib @@@@ unmarshaller : ',this.unmarshaller);
   }
 
-  marshalDocument(data: any): Observable<Object> {
-    // console.info('@@@@ scl-lib @@@@ marshalDocument ...');
+  marshalDocument(data: any): Observable<XMLDocument> {
+    console.info('@@@@ scl-lib @@@@ marshalDocument ...');
     return new Observable(observer => {
       const result = this.marshaller.marshalDocument(data);
-      // console.info('@@@@ scl-lib @@@@ context : ',this.context);
-      // console.info('@@@@ scl-lib @@@@ marshaller : ',this.marshaller);
-      console.debug('@@@@ scl-lib @@@@ marshalDocument result : ', typeof result);
-      // observer.next(this.serializer.serializeToString(result));
+      console.debug('@@@@ scl-lib @@@@ marshalDocument result : ',result);
       observer.next(result);
-      observer.complete();
     });
-  }
-
-  marshalDocumentTEST(data: any): Element {
-    var res: Element = this.marshaller.marshalDocument(data);
-    console.info('@@@@ scl-lib @@@@ marshalDocumentTEST ... ', res);
-    return res;
   }
 
   unmarshalString(data: string): Observable<IType> {

@@ -1,12 +1,14 @@
-import { Controller, Get, HttpCode, HttpStatus, Inject, Res } from '@nestjs/common';
+import { Controller, Get, HttpCode, HttpStatus, Res, Inject } from '@nestjs/common';
 import { map } from 'rxjs';
 import { Response } from "express";
-// import {ApiConsumes,} from "@nestjs/swagger";
-import { ScllibService } from './action/scllib.service';
-import { _SCLType } from './action/xmlns/SCL';
 import { AppService } from './app.service';
-import { ActionService } from './action/action.service';
+// import {ApiConsumes,} from "@nestjs/swagger";
 
+import { _SCLType } from './action/xmlns/SCL';
+import { ScllibServiceRest } from './action/scllib.service';
+
+// import { _SCLType } from '@opentemplate/scl-lib';
+// import { ScllibServiceRest } from '@opentemplate/scl-lib';
 
 const namespaces: any = {
   namespacePrefixes: {
@@ -15,13 +17,15 @@ const namespaces: any = {
   },
   mappingStyle : "simplified"
 };
-const serialize = require("w3c-xmlserializer");
 
 @Controller()
 export class AppController {
+
   constructor(private readonly appService: AppService,
-    private readonly scllibService: ScllibService) {
-      this.scllibService.setContext(namespaces);
+    // private readonly scllibService: ScllibService,
+    private readonly scllibServiceRest: ScllibServiceRest
+    ) {
+      this.scllibServiceRest.setContext(namespaces);
     }
 
   @Get()
@@ -44,13 +48,14 @@ export class AppController {
       }
     };
     try {
-      return this.scllibService.marshalDocument({ SCL: scl })
+      return this.scllibServiceRest.marshalDocument({ SCL: scl })
         .pipe(
           map((data) => {
             res.set('Content-Type', 'text/xml');
             return res.status(200).send(data.toString());
           }))
         .subscribe()
+      // return res.status(200).send('ok bb');
     } catch (err) {
       console.log('############ err ',err);
       throw err;
