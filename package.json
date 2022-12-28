@@ -1,6 +1,6 @@
 {
   "name": "lib-opentemplate",
-  "version": "0.2.5-0",
+  "version": "0.2.4-rc.0",
   "license": "MIT",
   "author": {
     "name": "Samir Romdhani",
@@ -14,6 +14,7 @@
     "build-lib": "ng build --project scllib --configuration production",
     "package-lib": "ng-packagr -p projects/scllib/ng-package.json",
     "test": "cd projects/scllib && npx jest --no-cache --coverage -c jest.config.js",
+    "prerelease": "grunt prerelease",
     "prepatch": "grunt prepatch",
     "patch": "grunt patch",
     "minor": "grunt minor",

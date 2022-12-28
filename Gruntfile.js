@@ -10,6 +10,15 @@ module.exports = function(grunt) {
   grunt.initConfig({
 
     prompt: {
+      prerelease: {
+        options: {
+          questions: [{
+            config: 'gitmessage',
+            type: 'input',
+            message: 'Commit message for prerelease version bump:'
+          }]
+        }
+      },
       prepatch: {
         options: {
           questions: [{
@@ -63,21 +72,16 @@ module.exports = function(grunt) {
         pushTo: 'origin',
         gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d',
         globalReplace: false,
-        prereleaseName: true,
+        prereleaseName: 'rc',
         metadata: '',
         regExp: false
       }
     }
 
   });
-
-  // grunt.registerTask('bump-patch', ['prompt:patch', 'bump:patch']);
-  // grunt.registerTask('bump-minor', ['prompt:minor', 'bump:minor']);
-  // grunt.registerTask('bump-major', ['prompt:major', 'bump:major']);
+  grunt.registerTask('prerelease', ['bump:prerelease']);
   grunt.registerTask('prepatch', ['bump:prepatch']);
   grunt.registerTask('patch', ['bump:patch']);
   grunt.registerTask('minor', ['bump:minor']);
   grunt.registerTask('major', ['bump:major']);
-  // grunt.registerTask('whatthecommit', ['curl_whathecommit']);
-  // grunt.registerTask('commit', ['prompt:commit', 'bump']);
 }
