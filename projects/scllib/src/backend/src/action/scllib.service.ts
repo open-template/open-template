@@ -8,9 +8,6 @@ import { Injectable } from '@nestjs/common';
 import { Jsonix } from '@opentempl/jsonix';
 import { Observable } from 'rxjs';
 import { _SCLType } from './xmlns/SCL';
-// import Module from './mappings/$';
-// const Module = require('./mappings/$');
-// import * as Module from "./mappings/$";
 import { Module } from "./mappings/$";
 
 const namespaces: any = {
@@ -54,16 +51,13 @@ export class ScllibServiceRest {
     }
     this.marshaller = this.context.createMarshaller();
     this.unmarshaller = this.context.createUnmarshaller();
-    console.info('@@@@ scl-lib @@@@ context : ',this.context);
-    console.info('@@@@ scl-lib @@@@ marshaller : ',this.marshaller);
-    console.info('@@@@ scl-lib @@@@ unmarshaller : ',this.unmarshaller);
   }
 
   marshalDocument(data: any): Observable<XMLDocument> {
     console.info('@@@@ scl-lib @@@@ marshalDocument ...');
     return new Observable(observer => {
       const result = this.marshaller.marshalDocument(data);
-      console.debug('@@@@ scl-lib @@@@ marshalDocument result : ',result);
+      // console.debug('@@@@ scl-lib @@@@ marshalDocument result : ',result);
       observer.next(result);
     });
   }
@@ -72,7 +66,7 @@ export class ScllibServiceRest {
     console.info('@@@@ scl-lib @@@@ unmarshalString ...');
     return new Observable(observer => {
       const result = this.unmarshaller.unmarshalString(data);
-      console.debug('@@@@ scl-lib @@@@ unmarshalString result : ',result);
+      // console.debug('@@@@ scl-lib @@@@ unmarshalString result : ',result);
       observer.next(result);
       observer.complete();
     });
@@ -82,7 +76,7 @@ export class ScllibServiceRest {
     console.info('@@@@ scl-lib @@@@ unmarshalURL ...');
     return new Observable(observer => {
       this.unmarshaller.unmarshalURL(capabilitiesUrl, (result: any) => {
-        console.debug('@@@@ scl-lib @@@@ unmarshalURL result : ',result);
+        // console.debug('@@@@ scl-lib @@@@ unmarshalURL result : ',result);
         observer.next(result);
         observer.complete();
       });

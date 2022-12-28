@@ -2,21 +2,21 @@
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/scllib",
   "assets": [
-    "src/lib",
+    "src/lib/mappings",
     {
       "glob": "**/*",
-      "input": "src/lib",
-      "output": "esm2020/lib"
+      "input": "src/lib/mappings",
+      "output": "esm2020/lib/mappings"
     },
     {
       "glob": "**/*",
-      "input": "src/lib",
-      "output": "fesm2020/lib"
+      "input": "src/lib/mappings",
+      "output": "fesm2020/lib/mappings"
     },
     {
       "glob": "**/*",
-      "input": "src/lib",
-      "output": "fesm2015/lib"
+      "input": "src/lib/mappings",
+      "output": "fesm2015/lib/mappings"
     }
   ],
   "lib": {
