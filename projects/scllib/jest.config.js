@@ -39,6 +39,7 @@ module.exports = {
   coverageReporters: ['clover', 'json', 'lcov', ['text', {skipFull: false}]],
   collectCoverageFrom: [
       '<rootDir>/src/lib/**/*.ts',
+      '!<rootDir>/src/lib/scllib.serviceRest.ts',
       '!<rootDir>/src/lib/**/index.ts',
       '!<rootDir>/src/lib/**/module.ts',
       "!<rootDir>node_modules/**"

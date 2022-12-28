@@ -10,6 +10,15 @@ module.exports = function(grunt) {
   grunt.initConfig({
 
     prompt: {
+      prepatch: {
+        options: {
+          questions: [{
+            config: 'gitmessage',
+            type: 'input',
+            message: 'Commit message for PREPATCH version bump:'
+          }]
+        }
+      },
       patch: {
         options: {
           questions: [{
@@ -54,7 +63,7 @@ module.exports = function(grunt) {
         pushTo: 'origin',
         gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d',
         globalReplace: false,
-        prereleaseName: false,
+        prereleaseName: true,
         metadata: '',
         regExp: false
       }
@@ -65,6 +74,7 @@ module.exports = function(grunt) {
   // grunt.registerTask('bump-patch', ['prompt:patch', 'bump:patch']);
   // grunt.registerTask('bump-minor', ['prompt:minor', 'bump:minor']);
   // grunt.registerTask('bump-major', ['prompt:major', 'bump:major']);
+  grunt.registerTask('prepatch', ['bump:prepatch']);
   grunt.registerTask('patch', ['bump:patch']);
   grunt.registerTask('minor', ['bump:minor']);
   grunt.registerTask('major', ['bump:major']);
