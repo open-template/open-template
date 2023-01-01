@@ -178,9 +178,9 @@ describe('ScllibService', () => {
     });
 
     it('unmarshalURL should be created', () => {
-      const testFile1 = `https://raw.githubusercontent.com/romdhanisam/open-template/main/projects/scllib/src/tests/files/samples/test1.xml`;
-      const testFile2 = `https://raw.githubusercontent.com/romdhanisam/open-template/main/projects/scllib/src/tests/files/samples/test2.xml`;
-      const testFile3 = `https://raw.githubusercontent.com/romdhanisam/open-template/main/projects/scllib/src/tests/files/samples/test3.xml`;
+      const testFile1 = `https://raw.githubusercontent.com/open-template/open-template/main/projects/scllib/src/tests/files/samples/test1.xml`;
+      const testFile2 = `https://raw.githubusercontent.com/open-template/open-template/main/projects/scllib/src/tests/files/samples/test2.xml`;
+      const testFile3 = `https://raw.githubusercontent.com/open-template/open-template/main/projects/scllib/src/tests/files/samples/test3.xml`;
       const expected: any = {
         "TYPE_NAME": "$.SCL",
         release: 4,
@@ -340,9 +340,9 @@ describe('ScllibService', () => {
       })
     }));
     it('unmarshalURL test', ((done) => {
-      const testFile1 = `https://raw.githubusercontent.com/romdhanisam/open-template/main/projects/scllib/src/tests/files/samples/test1.xml`;
-      const testFile2 = `https://raw.githubusercontent.com/romdhanisam/open-template/main/projects/scllib/src/tests/files/samples/test2.xml`;
-      const testFile3 = `https://raw.githubusercontent.com/romdhanisam/open-template/main/projects/scllib/src/tests/files/samples/test3.xml`;
+      const testFile1 = `https://raw.githubusercontent.com/open-template/open-template/main/projects/scllib/src/tests/files/samples/test1.xml`;
+      const testFile2 = `https://raw.githubusercontent.com/open-template/open-template/main/projects/scllib/src/tests/files/samples/test2.xml`;
+      const testFile3 = `https://raw.githubusercontent.com/open-template/open-template/main/projects/scllib/src/tests/files/samples/test3.xml`;
       const expected: any = {
         "TYPE_NAME": "$.SCL",
         release: 4,
@@ -456,9 +456,9 @@ describe('ScllibService', () => {
     }));
 
     it('unmarshalURL test', ((done) => {
-      const testFile1 = `https://raw.githubusercontent.com/romdhanisam/open-template/main/projects/scllib/src/tests/files/samples/test1.xml`;
-      const testFile2 = `https://raw.githubusercontent.com/romdhanisam/open-template/main/projects/scllib/src/tests/files/samples/test2.xml`;
-      const testFile3 = `https://raw.githubusercontent.com/romdhanisam/open-template/main/projects/scllib/src/tests/files/samples/test3.xml`;
+      const testFile1 = `https://raw.githubusercontent.com/open-template/open-template/main/projects/scllib/src/tests/files/samples/test1.xml`;
+      const testFile2 = `https://raw.githubusercontent.com/open-template/open-template/main/projects/scllib/src/tests/files/samples/test2.xml`;
+      const testFile3 = `https://raw.githubusercontent.com/open-template/open-template/main/projects/scllib/src/tests/files/samples/test3.xml`;
       const expectedName: any = {
         "key": "{http://www.iec.ch/61850/2003/SCL}SCL",
         "localPart": "SCL",
