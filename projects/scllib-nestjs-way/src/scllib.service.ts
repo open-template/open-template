@@ -10,14 +10,6 @@ import { Observable } from 'rxjs';
 import { _SCLType } from './xmlns/SCL';
 var Module = require('../src/mappings/$');
 
-const namespaces: any = {
-  namespacePrefixes: {
-    "http://www.iec.ch/61850/2003/SCL": "",
-    "http://www.w3.org/2001/XMLSchema": "xs"
-  },
-  mappingStyle : "simplified"
-};
-
 /**
  * Generic Interface
  */
@@ -47,7 +39,13 @@ export class ScllibService {
     if(namespace != undefined && namespace != null) {
       this.context = new Jsonix.Context([Module.$],namespace);
     } else {
-      this.context = new Jsonix.Context([Module.$, namespaces]); 
+      this.context = new Jsonix.Context([Module.$, {
+        namespacePrefixes: {
+          "http://www.iec.ch/61850/2003/SCL": "",
+          "http://www.w3.org/2001/XMLSchema": "xs"
+        },
+        mappingStyle : "simplified"
+      }]); 
     }
     this.marshaller = this.context.createMarshaller();
     this.unmarshaller = this.context.createUnmarshaller();
