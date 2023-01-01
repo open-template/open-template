@@ -63,7 +63,9 @@ jobs:
           npm ci
       - name: Build NestJS library 🔖 
         if: ${{ startsWith(github.ref_name, 'nest') }}
-        run: npm run build
+        run: |
+          cd projects/scllib-nestjs-way
+          npm run build
       - name: Publish NestJS package on NPM 🚣 📦
         if: ${{ startsWith(github.ref_name, 'nest') }}
         run: |
