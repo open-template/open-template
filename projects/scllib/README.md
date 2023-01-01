@@ -9,9 +9,9 @@ scl-lib
 
 ### Library for IEC 61850 standard
 
-[![license(MIT)](https://img.shields.io/npm/l/@opentemplate/scl-lib?color=%234B97FE&logo=opentemplate)](https://github.com/romdhanisam/open-template/blob/main/LICENSE)
+[![license(MIT)](https://img.shields.io/npm/l/@opentemplate/scl-lib?color=%234B97FE&logo=opentemplate)](https://github.com/open-template/open-template/blob/main/LICENSE)
 [![npm (scoped)](https://img.shields.io/npm/v/@opentemplate/scl-lib?color=%234B97FE&logo=opentemplate)](https://www.npmjs.com/package/@opentemplate/scl-lib)
-[![Coverage Status](https://codecov.io/github/romdhanisam/open-template/coverage.svg?branch=main)](https://codecov.io/github/romdhanisam/open-template?branch=main)
+[![Coverage Status](https://codecov.io/github/open-template/open-template/coverage.svg?branch=main)](https://codecov.io/github/open-template/open-template?branch=main)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=lib-opentemplate%3A%40opentemplate%2Fscl-lib&metric=coverage)](https://sonarcloud.io/summary/new_code?id=lib-opentemplate%3A%40opentemplate%2Fscl-lib)
 
 ## Usage
@@ -21,9 +21,9 @@ scl-lib
 npm i @opentemplate/scl-lib
 ```
 
-![lib screenshot](https://raw.githubusercontent.com/romdhanisam/open-template/v0.2.2/assets/img/lib-v0.2.0.png)
+![lib screenshot](https://raw.githubusercontent.com/open-template/open-template/v0.2.2/assets/img/lib-v0.2.0.png)
 ##### Context
-![context screenshot](https://raw.githubusercontent.com/romdhanisam/open-template/v0.2.2/assets/img/demo/jsonix-context.png)
+![context screenshot](https://raw.githubusercontent.com/open-template/open-template/v0.2.2/assets/img/demo/jsonix-context.png)
 
 ##### Usage
 You can import the library files from TypeScript:
@@ -57,7 +57,7 @@ const scl: _SCLType = {
 ...
 this.scllibService.marshalDocument({SCL: scl})
 ```
-![marshalDocument screenshot](https://raw.githubusercontent.com/romdhanisam/open-template/v0.2.2/assets/img/demo/marshall.png)
+![marshalDocument screenshot](https://raw.githubusercontent.com/open-template/open-template/v0.2.2/assets/img/demo/marshall.png)
 ---- 
 ### API Reference:
 ### [Jsonix](https://github.com/highsource/jsonix)
