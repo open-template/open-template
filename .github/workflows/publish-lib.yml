@@ -6,6 +6,8 @@ name: Publish to NPM Registry
 on:
   release:
     types: [created]
+    tags:
+      - 'v*'
 jobs:
   build1:
     runs-on: ubuntu-latest
@@ -48,12 +50,6 @@ jobs:
       - name: Publish package on NPM 🚣 📦
         run: |
           cd dist/scllib 
-          npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name: Publish NestJS package on NPM 🚣 📦
-        run: |
-          cd projects/scllib-nestjs-way 
           npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
