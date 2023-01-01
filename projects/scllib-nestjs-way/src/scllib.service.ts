@@ -44,10 +44,9 @@ export class ScllibService {
    * @param namespace 
    */
   setContext(namespace?: any){
+    this.context = new Jsonix.Context([Module.$, namespaces]);
     if(namespace != undefined && namespace != null) {
       this.context = new Jsonix.Context([Module.$],namespace);
-    } else {
-      this.context = new Jsonix.Context([Module.$, namespaces]); 
     }
     this.marshaller = this.context.createMarshaller();
     this.unmarshaller = this.context.createUnmarshaller();
