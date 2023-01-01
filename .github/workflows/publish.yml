@@ -6,8 +6,6 @@ name: Publish to NPM Registry
 on:
   release:
     types: [created]
-    tags:
-      - 'v*'
 jobs:
   build1:
     runs-on: ubuntu-latest
@@ -41,15 +39,32 @@ jobs:
         run: npm list
       - name: Install global dependencies 🔧
         run: npm ci
+        # LIB
       - name: Install library dependencies 🔧
+        if: ${{ startsWith(github.ref_name, 'v') }}
         run: |
           cd projects/scllib 
           npm ci
       - name: Build 🔖 
+        if: ${{ startsWith(github.ref_name, 'v') }}
         run: npm run build-lib
       - name: Publish package on NPM 🚣 📦
+        if: ${{ startsWith(github.ref_name, 'v') }}
         run: |
           cd dist/scllib 
+          npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          # NESTJS LIB
+      - name: Install NestJS library dependencies 🔧
+        if: ${{ startsWith(github.ref_name, 'nest') }}
+        run: |
+          cd projects/scllib-nestjs-way
+          npm ci
+      - name: Publish NestJS package on NPM 🚣 📦
+        if: ${{ startsWith(github.ref_name, 'nest') }}
+        run: |
+          cd projects/scllib-nestjs-way 
           npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
