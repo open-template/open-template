@@ -8,10 +8,12 @@ export abstract class XmlElement<P extends XmlElement<any, any>, T> {
     protected element: T;
     
     constructor(parent: P, element?: T) {
+        this.parent = parent;
         if(element == null){
             throw ("The SCL element must be defined");
+        } else {
+            this.setElement(element);
         }
-        this.parent = parent;
     }
 
     public getElement(): T {
