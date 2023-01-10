@@ -59,6 +59,7 @@
     "bump-patch": "grunt bump-patch",
     "bump-minor": "grunt bump-minor",
     "bump-major": "grunt bump-major",
+    "compodoc": "npx compodoc -p tsconfig.doc.json",
     "_cxsd": "cxsd",
     "_xsd": "cxsd xsdfile",
     "_jsonix": "docker run --rm -v \"$PWD\":/src/ -w /src adoptopenjdk/openjdk8:jre8u282-b08 java -jar src/lib/compiler/jsonix-schema-compiler-full.jar -d src/lib/compiler/mappings -p xsdfile",

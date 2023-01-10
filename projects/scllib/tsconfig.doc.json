@@ -1,0 +1,4 @@
+{
+    "include": ["src/lib/xmlns/*.ts"],
+    "exclude": []
+  }
