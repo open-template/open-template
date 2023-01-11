@@ -11,7 +11,6 @@ scl-lib
 
 [![license(MIT)](https://img.shields.io/npm/l/@opentemplate/scl-lib?color=%234B97FE&logo=opentemplate)](https://github.com/open-template/open-template/blob/main/LICENSE)
 [![npm (scoped)](https://img.shields.io/npm/v/@opentemplate/scl-lib?color=%234B97FE&logo=opentemplate)](https://www.npmjs.com/package/@opentemplate/scl-lib)
-[![Coverage Status](https://codecov.io/github/open-template/open-template/coverage.svg?branch=main)](https://codecov.io/github/open-template/open-template?branch=main)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=lib-opentemplate%3A%40opentemplate%2Fscl-lib&metric=coverage)](https://sonarcloud.io/summary/new_code?id=lib-opentemplate%3A%40opentemplate%2Fscl-lib)
 
 ## Usage
@@ -21,7 +20,7 @@ scl-lib
 npm i @opentemplate/scl-lib
 ```
 
-![lib screenshot](https://raw.githubusercontent.com/open-template/open-template/v0.2.2/assets/img/lib-v0.2.0.png)
+![lib screenshot](https://raw.githubusercontent.com/open-template/open-template/v0.2.6/assets/img/lib-v0.2.5.png)
 ##### Context
 ![context screenshot](https://raw.githubusercontent.com/open-template/open-template/v0.2.2/assets/img/demo/jsonix-context.png)
 
@@ -61,6 +60,7 @@ this.scllibService.marshalDocument({SCL: scl})
 ---- 
 ### API Reference:
 ### [Jsonix](https://github.com/highsource/jsonix)
+After fixing this https://github.com/highsource/jsonix/pull/266 we published **3.0.0-next.0** to npm as @opentempl/jsonix.
 * Jsonix (JSON interfaces for XML) is a JavaScript library which allows you to convert between XML and JSON structures.
 * With Jsonix you can parse XML into JSON (this process is called _unmarshalling_) or serialize JSON in XML form (this is called _marshalling_).
 * These conversions are based on declarative XML/JSON mappings which can be written manually or generated from an XML Schema.
