@@ -73,3 +73,21 @@ jobs:
           npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          # Adapter LIB
+      - name: Install Adapter-way library dependencies 🔧
+        if: ${{ startsWith(github.ref_name, 'adap') }}
+        run: |
+          cd projects/scllib-adapter-way
+          npm ci
+      - name: Build Adapter-way library 🔖 
+        if: ${{ startsWith(github.ref_name, 'adap') }}
+        run: |
+          cd projects/scllib-adapter-way
+          npm run build
+      - name: Publish Adapter-way package on NPM 🚣 📦
+        if: ${{ startsWith(github.ref_name, 'adap') }}
+        run: |
+          cd projects/scllib-adapter-way 
+          npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
