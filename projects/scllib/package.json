@@ -1,10 +1,10 @@
 {
   "name": "@opentemplate/scl-lib",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Library for IEC 61850 standard",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/romdhanisam/open-template.git"
+    "url": "git+https://github.com/open-template/open-template.git"
   },
   "author": {
     "name": "Samir Romdhani",
@@ -12,9 +12,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/romdhanisam/open-template/issues"
+    "url": "https://github.com/open-template/open-template/issues"
   },
-  "homepage": "https://github.com/romdhanisam/open-template/tree/main/projects/scllib#readme",
+  "homepage": "https://github.com/open-template/open-template/tree/main/projects/scllib#readme",
   "keywords": [
     "XML",
     "XSD",
