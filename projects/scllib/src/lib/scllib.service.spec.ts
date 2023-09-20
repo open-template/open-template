@@ -72,6 +72,92 @@ describe('ScllibService', () => {
       expect(new XMLSerializer().serializeToString(result))
       .toEqual(output);
     });
+
+    it('marshalDocument should be created when given other structure of IType test1', ((done) => {
+      const input: _SCLType = {
+        TYPE_NAME: "$.SCL",
+        release: 4,
+        revision: 'B',
+        version: '2007',
+        header: {
+          TYPE_NAME: "$.THeader",
+          id: "4f7752f4-b1c1-4d56-8d66-614e4da7cfbf",
+          version: "1.0",
+          revision: "2.0",
+          toolID: "openTemplate",
+        },
+        otherAttributes: {
+          release: '4',
+          revision: 'B',
+          version: '2007',
+          "xmlns": "http://www.iec.ch/61850/2003/SCL",
+          "xmlns:xs": "http://www.w3.org/2001/XMLSchema"
+        }
+      };
+      const output  = `<SCL xmlns="http://www.iec.ch/61850/2003/SCL" xmlns="http://www.iec.ch/61850/2003/SCL" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2007" revision="B" release="4"><Header id="4f7752f4-b1c1-4d56-8d66-614e4da7cfbf" version="1.0" revision="2.0" toolID="openTemplate"/></SCL>`;
+      service.marshalDocument({SCL: input}).subscribe((result)=>{
+        expect(new XMLSerializer().serializeToString(result)).toEqual(output);
+        done();
+      });
+    }));
+
+    it('marshalDocument should be created when given other structure of IType test 2', ((done) => {
+      const input: _SCLType = {
+        "TYPE_NAME": "$.SCL",
+        release: 4,
+        revision: 'B',
+        version: '2007',
+        header: {
+          "TYPE_NAME": "$.THeader",
+          id: "4f7752f4-b1c1-4d56-8d66-614e4da7cfbf",
+          version: "1.0",
+          revision: "2.0",
+          toolID: "openTemplate",
+        },
+        otherAttributes: {
+          release: '4',
+          revision: 'B',
+          version: '2007',
+          "xmlns": "http://www.iec.ch/61850/2003/SCL",
+          "xmlns:xs": "http://www.w3.org/2001/XMLSchema"
+        },
+        ied: [
+          {
+            "TYPE_NAME": "$.TIED",
+            name: "iedName1",
+            accessPoint: [
+              {
+                "TYPE_NAME": "$.TAccessPoint",
+                name: "ap",
+                otherAttributes: {
+                  name: "ap"
+                }
+              }
+            ],
+            configVersion: "configVersion",
+            manufacturer: "manufacturer",
+            originalSclRelease: 4,
+            originalSclRevision: "B",
+            originalSclVersion: "2007",
+            type: "type",
+            otherAttributes: {
+              configVersion: "configVersion",
+              manufacturer: "manufacturer",
+              name: "iedName1",
+              originalSclRelease: "4",
+              originalSclRevision: "B",
+              originalSclVersion: "2007",
+              type: "type",
+            }
+          }
+        ]
+      };
+      const output  = `<SCL xmlns="http://www.iec.ch/61850/2003/SCL" xmlns="http://www.iec.ch/61850/2003/SCL" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2007" revision="B" release="4"><Header id="4f7752f4-b1c1-4d56-8d66-614e4da7cfbf" version="1.0" revision="2.0" toolID="openTemplate"/><IED name="iedName1" type="type" manufacturer="manufacturer" configVersion="configVersion" originalSclVersion="2007" originalSclRevision="B" originalSclRelease="4"><AccessPoint name="ap"/></IED></SCL>`;
+      service.marshalDocument({SCL: input}).subscribe((result)=>{
+        expect(new XMLSerializer().serializeToString(result)).toEqual(output);
+        done();
+      });
+    }));
   });
 
   describe('ScllibService - unmarshal', () => {
@@ -86,7 +172,8 @@ describe('ScllibService', () => {
       // const keys : any[] = elements.map((e)=> e.key)
       // expect(localParts).toBeNull()
     });
-    it('unmarshalString test #1 should be created', () => {
+
+    it('unmarshalString test #1 should be created', ((done) => {
       const input  = `<SCL xmlns="http://www.iec.ch/61850/2003/SCL" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2007" revision="B" release="4">
       <Header id="4f7752f4-b1c1-4d56-8d66-614e4da7cfbf" version="1.0" revision="2.0" toolID="openTemplate"/></SCL>`;
 
@@ -111,9 +198,11 @@ describe('ScllibService', () => {
         }
       };
    
-      const result = service.unmarshaller.unmarshalString(input);
-      expect(result.SCL).toEqual(output);
-    });
+      service.unmarshalString(input).subscribe((result)=> {
+        expect(result.SCL).toEqual(output);
+        done();
+      });
+    }));
 
     it('unmarshalString test #2 should be created', () => {
       const input  = `<SCL xmlns="http://www.iec.ch/61850/2003/SCL" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2007" revision="B" release="4">

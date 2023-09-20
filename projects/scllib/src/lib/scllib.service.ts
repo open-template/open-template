@@ -10,7 +10,7 @@ import { _SCLType } from './xmlns/SCL';
 // const schemas = require('./mappings/$');
 // import schemas from './mappings/$';
 import Module from './mappings/$';
-
+import {omit} from "./utils/utils";
 const namespaces: any = {
   namespacePrefixes: {
     "http://www.iec.ch/61850/2003/SCL": "",
@@ -43,8 +43,7 @@ export class ScllibService {
   
   /**
    * Init Context - Compiler
-   * @param factory 
-   * @param namespace 
+   * @param namespace
    */
   setContext(namespace?: any){
     if(namespace != undefined && namespace != null) {
@@ -62,9 +61,11 @@ export class ScllibService {
   marshalDocument(data: any): Observable<XMLDocument> {
     console.info('@@@@ scl-lib @@@@ marshalDocument ...');
     return new Observable(observer => {
+      data['SCL'] = omit(data['SCL'], ["otherAttributes"]);
       const result = this.marshaller.marshalDocument(data);
       console.debug('@@@@ scl-lib @@@@ marshalDocument result : ',result);
       observer.next(result);
+      observer.complete();
     });
   }
 
