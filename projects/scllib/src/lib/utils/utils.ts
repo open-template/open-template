@@ -1,8 +1,9 @@
-var _ = require('lodash');
+import _ from 'lodash';
 export function omit(obj, arr) {
     for (let key in obj) {
         if (obj.hasOwnProperty(key)) {
             if (arr.includes(key)) {
+                //_.omit(obj, arr);
                 delete obj[key];
             } else if (Array.isArray(obj[key])) {
                 for (let i = 0; i < obj[key].length; i++) {

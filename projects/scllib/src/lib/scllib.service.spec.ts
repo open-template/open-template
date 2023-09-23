@@ -85,13 +85,6 @@ describe('ScllibService', () => {
           version: "1.0",
           revision: "2.0",
           toolID: "openTemplate",
-        },
-        otherAttributes: {
-          release: '4',
-          revision: 'B',
-          version: '2007',
-          "xmlns": "http://www.iec.ch/61850/2003/SCL",
-          "xmlns:xs": "http://www.w3.org/2001/XMLSchema"
         }
       };
       const output  = `<SCL xmlns="http://www.iec.ch/61850/2003/SCL" xmlns="http://www.iec.ch/61850/2003/SCL" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2007" revision="B" release="4"><Header id="4f7752f4-b1c1-4d56-8d66-614e4da7cfbf" version="1.0" revision="2.0" toolID="openTemplate"/></SCL>`;
@@ -114,13 +107,6 @@ describe('ScllibService', () => {
           revision: "2.0",
           toolID: "openTemplate",
         },
-        otherAttributes: {
-          release: '4',
-          revision: 'B',
-          version: '2007',
-          "xmlns": "http://www.iec.ch/61850/2003/SCL",
-          "xmlns:xs": "http://www.w3.org/2001/XMLSchema"
-        },
         ied: [
           {
             "TYPE_NAME": "$.TIED",
@@ -128,10 +114,7 @@ describe('ScllibService', () => {
             accessPoint: [
               {
                 "TYPE_NAME": "$.TAccessPoint",
-                name: "ap",
-                otherAttributes: {
-                  name: "ap"
-                }
+                name: "ap"
               }
             ],
             configVersion: "configVersion",
@@ -139,16 +122,7 @@ describe('ScllibService', () => {
             originalSclRelease: 4,
             originalSclRevision: "B",
             originalSclVersion: "2007",
-            type: "type",
-            otherAttributes: {
-              configVersion: "configVersion",
-              manufacturer: "manufacturer",
-              name: "iedName1",
-              originalSclRelease: "4",
-              originalSclRevision: "B",
-              originalSclVersion: "2007",
-              type: "type",
-            }
+            type: "type"
           }
         ]
       };
@@ -188,13 +162,6 @@ describe('ScllibService', () => {
           version: "1.0",
           revision: "2.0",
           toolID: "openTemplate",
-        },
-        otherAttributes: {
-          release: '4',
-          revision: 'B',
-          version: '2007',
-          "xmlns": "http://www.iec.ch/61850/2003/SCL",
-         "xmlns:xs": "http://www.w3.org/2001/XMLSchema"
         }
       };
    
@@ -224,13 +191,6 @@ describe('ScllibService', () => {
           revision: "2.0",
           toolID: "openTemplate",
         },
-        otherAttributes: {
-          release: '4',
-          revision: 'B',
-          version: '2007',
-          "xmlns": "http://www.iec.ch/61850/2003/SCL",
-         "xmlns:xs": "http://www.w3.org/2001/XMLSchema"
-        },
         ied: [
           {
             "TYPE_NAME": "$.TIED",
@@ -238,10 +198,7 @@ describe('ScllibService', () => {
             accessPoint: [
               {
                 "TYPE_NAME": "$.TAccessPoint",
-                name: "ap",
-                otherAttributes: {
-                  name: "ap"
-                }
+                name: "ap"
               }
             ],
             configVersion: "configVersion",
@@ -249,16 +206,7 @@ describe('ScllibService', () => {
             originalSclRelease: 4,
             originalSclRevision: "B",
             originalSclVersion: "2007",
-            type: "type",
-            otherAttributes: {
-              configVersion: "configVersion",
-              manufacturer: "manufacturer",
-              name: "iedName1",
-              originalSclRelease: "4",
-              originalSclRevision: "B",
-              originalSclVersion: "2007",
-              type: "type",
-            }
+            type: "type"
           }
         ]
       };
@@ -281,13 +229,6 @@ describe('ScllibService', () => {
           version: "1.0",
           revision: "2.0",
           toolID: "openTemplate",
-        },
-        otherAttributes: {
-          release: '4',
-          revision: 'B',
-          version: '2007',
-          "xmlns": "http://www.iec.ch/61850/2003/SCL",
-         "xmlns:xs": "http://www.w3.org/2001/XMLSchema"
         }
       };
      [testFile1, testFile2, testFile3].forEach(testFile => {
@@ -339,13 +280,6 @@ describe('ScllibService', () => {
           version: "version0001",
           revision: "revision001",
           toolID: "openTemplate",
-        },
-        otherAttributes: {
-          release: '4',
-          revision: 'B',
-          version: '2007',
-          "xmlns": "http://www.iec.ch/61850/2003/SCL",
-         "xmlns:xs": "http://www.w3.org/2001/XMLSchema"
         }
       };
 
@@ -381,19 +315,13 @@ describe('ScllibService', () => {
             "private": [
               {
                 "TYPE_NAME": "$.TPrivate",
-                "otherAttributes": {
-                  "type": "company-private",
-                },
                 "type": "company-private",
               }
             ],
             "accessPoint":  [
               {
                 "TYPE_NAME": "$.TAccessPoint",
-                "name": "ap",
-                "otherAttributes": {
-                  "name": "ap",
-                },
+                "name": "ap"
               },
             ],
             "configVersion": "configVersion",
@@ -402,25 +330,9 @@ describe('ScllibService', () => {
             "originalSclRelease": 4,
             "originalSclRevision": "B",
             "originalSclVersion": "2007",
-            "otherAttributes": {
-              "configVersion": "configVersion",
-              "manufacturer": "manufacturer",
-              "name": "name1",
-              "originalSclRelease": "4",
-              "originalSclRevision": "B",
-              "originalSclVersion": "2007",
-              "type": "type",
-            },
             "type": "type",
           }
-        ],
-        otherAttributes: {
-          release: '4',
-          revision: 'B',
-          version: '2007',
-          "xmlns": "http://www.iec.ch/61850/2003/SCL",
-         "xmlns:xs": "http://www.w3.org/2001/XMLSchema"
-        }
+        ]
       };
 
       scllibService.unmarshalString(input).subscribe((res) =>{
@@ -443,13 +355,6 @@ describe('ScllibService', () => {
           version: "1.0",
           revision: "2.0",
           toolID: "openTemplate",
-        },
-        otherAttributes: {
-          release: '4',
-          revision: 'B',
-          version: '2007',
-          "xmlns": "http://www.iec.ch/61850/2003/SCL",
-         "xmlns:xs": "http://www.w3.org/2001/XMLSchema"
         }
       };
      const source = of(scllibService.unmarshalURL(testFile1),
@@ -523,13 +428,6 @@ describe('ScllibService', () => {
           version: "1.0",
           revision: "2.0",
           toolID: "openTemplate",
-        },
-        otherAttributes: {
-          release: '4',
-          revision: 'B',
-          version: '2007',
-          "{http://www.w3.org/2000/xmlns/}xmlns": "http://www.iec.ch/61850/2003/SCL",
-          "{http://www.w3.org/2000/xmlns/}xs": "http://www.w3.org/2001/XMLSchema"
         }
       };
 
@@ -566,13 +464,6 @@ describe('ScllibService', () => {
           version: "1.0",
           revision: "2.0",
           toolID: "openTemplate",
-        },
-        otherAttributes: {
-          release: '4',
-          revision: 'B',
-          version: '2007',
-          "{http://www.w3.org/2000/xmlns/}xmlns": "http://www.iec.ch/61850/2003/SCL",
-          "{http://www.w3.org/2000/xmlns/}xs": "http://www.w3.org/2001/XMLSchema"
         }
       };
      const source = of(scllibService.unmarshalURL(testFile1),

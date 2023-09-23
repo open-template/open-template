@@ -61,7 +61,6 @@ export class ScllibService {
   marshalDocument(data: any): Observable<XMLDocument> {
     console.info('@@@@ scl-lib @@@@ marshalDocument ...');
     return new Observable(observer => {
-      data['SCL'] = omit(data['SCL'], ["otherAttributes"]);
       const result = this.marshaller.marshalDocument(data);
       console.debug('@@@@ scl-lib @@@@ marshalDocument result : ',result);
       observer.next(result);

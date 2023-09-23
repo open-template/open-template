@@ -27,6 +27,9 @@ var $_Module_Factory = function () {
               typeName: 'tLDevice',
               baseTypeInfo: '.TUnNaming',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'ln0',
                       required: true,
                       elementName: 'LN0',
@@ -77,6 +80,9 @@ var $_Module_Factory = function () {
               typeName: 'tSettingControl',
               baseTypeInfo: '.TUnNaming',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'numOfSGs',
                       required: true,
                       typeInfo: 'Long',
@@ -137,6 +143,9 @@ var $_Module_Factory = function () {
               typeName: 'tDA',
               baseTypeInfo: '.TAbstractDataAttribute',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'protNs',
                       minOccurs: 0,
                       collection: true,
@@ -185,6 +194,9 @@ var $_Module_Factory = function () {
               typeName: 'tDOType',
               baseTypeInfo: '.TIDNaming',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'sdoOrDA',
                       minOccurs: 0,
                       collection: true,
@@ -216,7 +228,10 @@ var $_Module_Factory = function () {
               localName: 'TSMV',
               typeName: 'tSMV',
               baseTypeInfo: '.TControlBlock',
-
+              propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }]
           }, {
               localName: 'TPIPIGMPv3Src',
               typeName: 'tP_IP-IGMPv3Src',
@@ -226,6 +241,9 @@ var $_Module_Factory = function () {
               typeName: 'tIED',
               baseTypeInfo: '.TUnNaming',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'services',
                       elementName: 'Services',
                       typeInfo: '.TServices'
@@ -325,12 +343,18 @@ var $_Module_Factory = function () {
               localName: 'TEqSubFunction',
               typeName: 'tEqSubFunction',
               baseTypeInfo: '.TAbstractEqFuncSubFunc',
-
+              propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }]
           }, {
               localName: 'TLogControl',
               typeName: 'tLogControl',
               baseTypeInfo: '.TControlWithTriggerOpt',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'ldInst',
                       typeInfo: 'NormalizedString',
                       attributeName: {
@@ -454,6 +478,9 @@ var $_Module_Factory = function () {
               typeName: 'tControlWithIEDName',
               baseTypeInfo: '.TControl',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'iedName',
                       minOccurs: 0,
                       collection: true,
@@ -498,6 +525,9 @@ var $_Module_Factory = function () {
               typeName: 'tCommunication',
               baseTypeInfo: '.TUnNaming',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'subNetwork',
                       required: true,
                       collection: true,
@@ -508,12 +538,18 @@ var $_Module_Factory = function () {
               localName: 'TBDA',
               typeName: 'tBDA',
               baseTypeInfo: '.TAbstractDataAttribute',
-
+              propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }]
           }, {
               localName: 'TAbstractEqFuncSubFunc',
               typeName: 'tAbstractEqFuncSubFunc',
               baseTypeInfo: '.TPowerSystemResource',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'generalEquipment',
                       minOccurs: 0,
                       collection: true,
@@ -675,6 +711,9 @@ var $_Module_Factory = function () {
               typeName: 'tAbstractDataAttribute',
               baseTypeInfo: '.TUnNaming',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'val',
                       minOccurs: 0,
                       collection: true,
@@ -738,6 +777,9 @@ var $_Module_Factory = function () {
               typeName: 'tEnumType',
               baseTypeInfo: '.TIDNaming',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'enumVal',
                       required: true,
                       collection: true,
@@ -775,6 +817,9 @@ var $_Module_Factory = function () {
               typeName: 'tGSE',
               baseTypeInfo: '.TControlBlock',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'minTime',
                       elementName: 'MinTime',
                       typeInfo: '.TDurationInMilliSec'
@@ -836,6 +881,9 @@ var $_Module_Factory = function () {
               typeName: 'tSubNetwork',
               baseTypeInfo: '.TNaming',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'bitRate',
                       elementName: 'BitRate',
                       typeInfo: '.TBitRateInMbPerSec'
@@ -857,6 +905,9 @@ var $_Module_Factory = function () {
               typeName: 'tBay',
               baseTypeInfo: '.TEquipmentContainer',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'conductingEquipment',
                       minOccurs: 0,
                       collection: true,
@@ -880,6 +931,9 @@ var $_Module_Factory = function () {
               typeName: 'tFunction',
               baseTypeInfo: '.TPowerSystemResource',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'subFunction',
                       minOccurs: 0,
                       collection: true,
@@ -910,6 +964,9 @@ var $_Module_Factory = function () {
               typeName: 'tControl',
               baseTypeInfo: '.TUnNaming',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'name',
                       required: true,
                       typeInfo: 'Name',
@@ -1002,6 +1059,9 @@ var $_Module_Factory = function () {
               typeName: 'tGeneralEquipmentContainer',
               baseTypeInfo: '.TPowerSystemResource',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'generalEquipment',
                       minOccurs: 0,
                       collection: true,
@@ -1019,6 +1079,9 @@ var $_Module_Factory = function () {
               typeName: 'tPowerTransformer',
               baseTypeInfo: '.TEquipment',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'transformerWinding',
                       required: true,
                       collection: true,
@@ -1212,6 +1275,9 @@ var $_Module_Factory = function () {
               typeName: 'tLine',
               baseTypeInfo: '.TGeneralEquipmentContainer',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'voltage',
                       elementName: 'Voltage',
                       typeInfo: '.TVoltage'
@@ -1253,7 +1319,10 @@ var $_Module_Factory = function () {
               localName: 'TPowerSystemResource',
               typeName: 'tPowerSystemResource',
               baseTypeInfo: '.TLNodeContainer',
-
+              propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }]
           }, {
               localName: 'TServiceWithMaxAndModify',
               typeName: 'tServiceWithMaxAndModify',
@@ -1271,6 +1340,9 @@ var $_Module_Factory = function () {
               typeName: 'tProcess',
               baseTypeInfo: '.TGeneralEquipmentContainer',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'conductingEquipment',
                       minOccurs: 0,
                       collection: true,
@@ -1318,6 +1390,9 @@ var $_Module_Factory = function () {
               typeName: 'tServer',
               baseTypeInfo: '.TUnNaming',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'authentication',
                       required: true,
                       elementName: 'Authentication',
@@ -1485,6 +1560,9 @@ var $_Module_Factory = function () {
               localName: 'TBaseElement',
               typeName: 'tBaseElement',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'any',
                       minOccurs: 0,
                       collection: true,
@@ -1506,6 +1584,9 @@ var $_Module_Factory = function () {
               typeName: 'tEquipmentContainer',
               baseTypeInfo: '.TPowerSystemResource',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'powerTransformer',
                       minOccurs: 0,
                       collection: true,
@@ -1523,6 +1604,9 @@ var $_Module_Factory = function () {
               typeName: 'tGSEControl',
               baseTypeInfo: '.TControlWithIEDName',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'protocol',
                       elementName: 'Protocol',
                       typeInfo: '.TProtocol'
@@ -1561,6 +1645,9 @@ var $_Module_Factory = function () {
               typeName: 'tAbstractConductingEquipment',
               baseTypeInfo: '.TEquipment',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'terminal',
                       minOccurs: 0,
                       maxOccurs: 2,
@@ -1579,6 +1666,9 @@ var $_Module_Factory = function () {
               typeName: 'tDOI',
               baseTypeInfo: '.TUnNaming',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'sdiOrDAI',
                       minOccurs: 0,
                       collection: true,
@@ -1622,6 +1712,9 @@ var $_Module_Factory = function () {
               typeName: 'tIDNaming',
               baseTypeInfo: '.TBaseElement',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'id',
                       required: true,
                       typeInfo: 'Token',
@@ -1646,6 +1739,9 @@ var $_Module_Factory = function () {
               typeName: null,
               baseTypeInfo: '.TBaseElement',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'header',
                       required: true,
                       elementName: 'Header',
@@ -1776,6 +1872,9 @@ var $_Module_Factory = function () {
               typeName: 'tAccessPoint',
               baseTypeInfo: '.TUnNaming',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'server',
                       required: true,
                       elementName: 'Server',
@@ -2101,6 +2200,9 @@ var $_Module_Factory = function () {
               typeName: 'tLNodeContainer',
               baseTypeInfo: '.TNaming',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'lNode',
                       minOccurs: 0,
                       collection: true,
@@ -2116,6 +2218,9 @@ var $_Module_Factory = function () {
               typeName: 'tUnNaming',
               baseTypeInfo: '.TBaseElement',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'desc',
                       typeInfo: 'NormalizedString',
                       attributeName: {
@@ -2128,6 +2233,9 @@ var $_Module_Factory = function () {
               typeName: 'tGeneralEquipment',
               baseTypeInfo: '.TEquipment',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'eqFunction',
                       minOccurs: 0,
                       collection: true,
@@ -2166,6 +2274,9 @@ var $_Module_Factory = function () {
               typeName: 'tSubEquipment',
               baseTypeInfo: '.TPowerSystemResource',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'eqFunction',
                       minOccurs: 0,
                       collection: true,
@@ -2203,6 +2314,9 @@ var $_Module_Factory = function () {
               typeName: 'tLNode',
               baseTypeInfo: '.TUnNaming',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'iedName',
                       attributeName: {
                           localPart: 'iedName'
@@ -2289,6 +2403,9 @@ var $_Module_Factory = function () {
               typeName: 'tControlWithTriggerOpt',
               baseTypeInfo: '.TControl',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'trgOps',
                       elementName: 'TrgOps',
                       typeInfo: '.TTrgOps'
@@ -2305,6 +2422,9 @@ var $_Module_Factory = function () {
               typeName: 'tPrivate',
               baseTypeInfo: '.TAnyContentFromOtherNamespace',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'type',
                       required: true,
                       attributeName: {
@@ -2323,6 +2443,9 @@ var $_Module_Factory = function () {
               typeName: 'tInputs',
               baseTypeInfo: '.TUnNaming',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'extRef',
                       required: true,
                       collection: true,
@@ -2352,6 +2475,9 @@ var $_Module_Factory = function () {
               typeName: 'tRptEnabled',
               baseTypeInfo: '.TUnNaming',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'clientLN',
                       minOccurs: 0,
                       collection: true,
@@ -2370,6 +2496,9 @@ var $_Module_Factory = function () {
               typeName: 'tSDI',
               baseTypeInfo: '.TUnNaming',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'sdiOrDAI',
                       minOccurs: 0,
                       collection: true,
@@ -2408,6 +2537,9 @@ var $_Module_Factory = function () {
               typeName: 'tPhysConn',
               baseTypeInfo: '.TUnNaming',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'p',
                       minOccurs: 0,
                       collection: true,
@@ -2440,6 +2572,9 @@ var $_Module_Factory = function () {
               typeName: 'tTerminal',
               baseTypeInfo: '.TUnNaming',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'name',
                       typeInfo: 'NormalizedString',
                       attributeName: {
@@ -2503,6 +2638,9 @@ var $_Module_Factory = function () {
               typeName: 'tVoltageLevel',
               baseTypeInfo: '.TEquipmentContainer',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'voltage',
                       elementName: 'Voltage',
                       typeInfo: '.TVoltage'
@@ -2612,6 +2750,9 @@ var $_Module_Factory = function () {
               typeName: 'tDataSet',
               baseTypeInfo: '.TUnNaming',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'fcda',
                       required: true,
                       collection: true,
@@ -2631,6 +2772,9 @@ var $_Module_Factory = function () {
               typeName: 'tTapChanger',
               baseTypeInfo: '.TPowerSystemResource',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'subEquipment',
                       minOccurs: 0,
                       collection: true,
@@ -2666,12 +2810,18 @@ var $_Module_Factory = function () {
               localName: 'TEqFunction',
               typeName: 'tEqFunction',
               baseTypeInfo: '.TAbstractEqFuncSubFunc',
-
+              propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }]
           }, {
               localName: 'TCertificate',
               typeName: 'tCertificate',
               baseTypeInfo: '.TNaming',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'subject',
                       required: true,
                       elementName: 'Subject',
@@ -2701,6 +2851,9 @@ var $_Module_Factory = function () {
               typeName: 'tDAI',
               baseTypeInfo: '.TUnNaming',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'val',
                       minOccurs: 0,
                       collection: true,
@@ -2747,6 +2900,9 @@ var $_Module_Factory = function () {
               typeName: 'tLog',
               baseTypeInfo: '.TUnNaming',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'name',
                       typeInfo: 'Name',
                       attributeName: {
@@ -2759,6 +2915,9 @@ var $_Module_Factory = function () {
               typeName: 'tAnyLN',
               baseTypeInfo: '.TUnNaming',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'dataSet',
                       minOccurs: 0,
                       collection: true,
@@ -2892,6 +3051,9 @@ var $_Module_Factory = function () {
               typeName: 'tLNodeType',
               baseTypeInfo: '.TIDNaming',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: '_do',
                       required: true,
                       collection: true,
@@ -2920,6 +3082,9 @@ var $_Module_Factory = function () {
               typeName: 'tSampledValueControl',
               baseTypeInfo: '.TControlWithIEDName',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'smvOpts',
                       required: true,
                       elementName: 'SmvOpts',
@@ -2979,6 +3144,9 @@ var $_Module_Factory = function () {
               typeName: 'tText',
               baseTypeInfo: '.TAnyContentFromOtherNamespace',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'source',
                       attributeName: {
                           localPart: 'source'
@@ -3018,6 +3186,9 @@ var $_Module_Factory = function () {
               typeName: 'tLN',
               baseTypeInfo: '.TAnyLN',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'prefix',
                       typeInfo: 'NormalizedString',
                       attributeName: {
@@ -3048,6 +3219,9 @@ var $_Module_Factory = function () {
               typeName: 'tConnectedAP',
               baseTypeInfo: '.TUnNaming',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'address',
                       elementName: 'Address',
                       typeInfo: '.TAddress'
@@ -3142,6 +3316,9 @@ var $_Module_Factory = function () {
               typeName: 'tHitem',
               baseTypeInfo: '.TAnyContentFromOtherNamespace',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'version',
                       required: true,
                       typeInfo: 'NormalizedString',
@@ -3192,6 +3369,9 @@ var $_Module_Factory = function () {
               typeName: 'tSubstation',
               baseTypeInfo: '.TEquipmentContainer',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'voltageLevel',
                       required: true,
                       collection: true,
@@ -3209,6 +3389,9 @@ var $_Module_Factory = function () {
               typeName: 'tConnectivityNode',
               baseTypeInfo: '.TLNodeContainer',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'pathName',
                       required: true,
                       typeInfo: 'NormalizedString',
@@ -3286,6 +3469,9 @@ var $_Module_Factory = function () {
               typeName: 'tServerAt',
               baseTypeInfo: '.TUnNaming',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'apName',
                       required: true,
                       typeInfo: 'NormalizedString',
@@ -3311,6 +3497,9 @@ var $_Module_Factory = function () {
               typeName: 'tDAType',
               baseTypeInfo: '.TIDNaming',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'bda',
                       required: true,
                       collection: true,
@@ -3334,6 +3523,9 @@ var $_Module_Factory = function () {
               localName: 'TAnyContentFromOtherNamespace',
               typeName: 'tAnyContentFromOtherNamespace',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'content',
                       collection: true,
                       type: 'anyElement'
@@ -3343,6 +3535,9 @@ var $_Module_Factory = function () {
               typeName: 'tTransformerWinding',
               baseTypeInfo: '.TAbstractConductingEquipment',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'tapChanger',
                       elementName: 'TapChanger',
                       typeInfo: '.TTapChanger'
@@ -3370,6 +3565,9 @@ var $_Module_Factory = function () {
               typeName: 'tNaming',
               baseTypeInfo: '.TBaseElement',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'name',
                       required: true,
                       typeInfo: 'NormalizedString',
@@ -3389,12 +3587,18 @@ var $_Module_Factory = function () {
               localName: 'LN0',
               typeName: null,
               baseTypeInfo: '.TLN0',
-
+              propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }]
           }, {
               localName: 'TControlBlock',
               typeName: 'tControlBlock',
               baseTypeInfo: '.TUnNaming',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'address',
                       elementName: 'Address',
                       typeInfo: '.TAddress'
@@ -3420,6 +3624,9 @@ var $_Module_Factory = function () {
               typeName: 'tReportControl',
               baseTypeInfo: '.TControlWithTriggerOpt',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'optFields',
                       required: true,
                       elementName: 'OptFields',
@@ -3469,7 +3676,10 @@ var $_Module_Factory = function () {
               localName: 'TAccessControl',
               typeName: 'tAccessControl',
               baseTypeInfo: '.TAnyContentFromOtherNamespace',
-
+              propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }]
           }, {
               localName: 'TPIPv6Base',
               typeName: 'tP_IPv6base',
@@ -3547,6 +3757,9 @@ var $_Module_Factory = function () {
               typeName: 'tLN0',
               baseTypeInfo: '.TAnyLN',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'gseControl',
                       minOccurs: 0,
                       collection: true,
@@ -3651,6 +3864,9 @@ var $_Module_Factory = function () {
               typeName: 'tDO',
               baseTypeInfo: '.TUnNaming',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'name',
                       required: true,
                       typeInfo: 'Name',
@@ -3740,6 +3956,9 @@ var $_Module_Factory = function () {
               typeName: 'tSDO',
               baseTypeInfo: '.TUnNaming',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'name',
                       required: true,
                       typeInfo: 'Name',
@@ -3848,6 +4067,9 @@ var $_Module_Factory = function () {
               typeName: 'tEquipment',
               baseTypeInfo: '.TPowerSystemResource',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'virtual',
                       typeInfo: 'Boolean',
                       attributeName: {
@@ -3860,6 +4082,9 @@ var $_Module_Factory = function () {
               typeName: 'tSubFunction',
               baseTypeInfo: '.TPowerSystemResource',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'generalEquipment',
                       minOccurs: 0,
                       collection: true,
@@ -3894,6 +4119,9 @@ var $_Module_Factory = function () {
               typeName: 'tConductingEquipment',
               baseTypeInfo: '.TAbstractConductingEquipment',
               propertyInfos: [{
+                      name: 'otherAttributes',
+                      type: 'anyAttribute'
+                  }, {
                       name: 'eqFunction',
                       minOccurs: 0,
                       collection: true,

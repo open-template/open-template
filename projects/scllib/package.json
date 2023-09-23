@@ -1,6 +1,6 @@
 {
   "name": "@opentemplate/scl-lib",
-  "version": "0.2.10",
+  "version": "1.0.3",
   "description": "Library for IEC 61850 standard",
   "repository": {
     "type": "git",
