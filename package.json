@@ -40,6 +40,7 @@
     "url": "https://github.com/open-template/open-template/issues"
   },
   "dependencies": {
+    "@angular-devkit/schematics": "^16.2.3",
     "@angular/common": "^14.1.0",
     "@angular/compiler": "^14.1.0",
     "@angular/core": "^14.2.0",
