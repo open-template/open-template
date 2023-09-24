@@ -40,7 +40,7 @@
     "url": "https://github.com/open-template/open-template/issues"
   },
   "dependencies": {
-    "@angular-devkit/schematics": "^16.2.0",
+    "@angular-devkit/schematics": "^16.2.3",
     "@angular/common": "^15.2.9",
     "@angular/compiler": "^15.2.9",
     "@angular/core": "^15.2.9",
@@ -59,6 +59,7 @@
     "@angular-eslint/eslint-plugin-template": "15.2.1",
     "@angular-eslint/schematics": "15.2.1",
     "@angular-eslint/template-parser": "15.2.1",
+    "@angular/cli": "^15.2.9",
     "@angular/compiler-cli": "^15.2.9",
     "@types/estree": "^1.0.0",
     "@types/jest": "^27.5.2",
