@@ -4,7 +4,7 @@
 
 interface BaseType {
 	TYPE_NAME?: string; //required from jsonix compiler
-	value?: any; //Array<Object>
+	content?: any; //Array<Object>
 	otherAttributes?: any;// Map<QName, string>;
 }
 export interface _any extends BaseType { value: any; }

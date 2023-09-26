@@ -152,7 +152,7 @@ export interface tBDA extends _tBDA { constructor: { new(): tBDA }; }
 export var tBDA: { new(): tBDA };
 
 export interface _tBitRateInMbPerSec extends Primitive._number {
-	multiplier?: _tUnitMultiplierEnum;
+	multiplier?: tUnitMultiplierEnum;
 	unit?: string;
 }
 export interface tBitRateInMbPerSec extends _tBitRateInMbPerSec { constructor: { new(): tBitRateInMbPerSec }; }
@@ -1585,7 +1585,8 @@ export interface tTrgOps extends _tTrgOps { constructor: { new(): tTrgOps }; }
 export var tTrgOps: { new(): tTrgOps };
 
 export type tUnitMultiplierEnum = ("" | "m" | "k" | "M" | "mu" | "y" | "z" | "a" | "f" | "p" | "n" | "c" | "d" | "da" | "h" | "G" | "T" | "P" | "E" | "Z" | "Y");
-export interface _tUnitMultiplierEnum extends Primitive._string { value: tUnitMultiplierEnum; }
+export interface _tUnitMultiplierEnum extends Primitive._string
+{ value: tUnitMultiplierEnum; }
 
 export interface _tUnNaming extends _tBaseElement {
 	desc?: string;
