@@ -13,9 +13,9 @@ export interface _LN0Type extends _tLN0 {}
 export interface LN0Type extends _LN0Type { constructor: { new(): LN0Type }; }
 
 export interface _SCLType extends _tBaseElement {
-	release: number;
-	revision: string;
-	version: string;
+	release?: number;
+	revision?: string;
+	version?: string;
 	communication?: _tCommunication;
 	dataTypeTemplates?: _tDataTypeTemplates;
 	header: _tHeader;
