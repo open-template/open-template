@@ -4,18 +4,18 @@
 
 interface BaseType {
 	TYPE_NAME?: string; //required from jsonix compiler
-	content?: any; //Array<Object>
+	value?: any; //Array<Object>
 	otherAttributes?: any;// Map<QName, string>;
 }
-export interface _any extends BaseType { content: any; }
+export interface _any extends BaseType { value: any; }
 
-export interface _boolean extends BaseType { content: boolean; }
+export interface _boolean extends BaseType { value: boolean; }
 
-export interface _Date extends BaseType { content: Date; }
+export interface _Date extends BaseType { value: Date; }
 
-export interface _number extends BaseType { content: number; }
+export interface _number extends BaseType { value: number; }
 
-export interface _string extends BaseType { content: string; }
+export interface _string extends BaseType { value: string; }
 
 export interface document extends BaseType {
 }

@@ -1585,7 +1585,7 @@ export interface tTrgOps extends _tTrgOps { constructor: { new(): tTrgOps }; }
 export var tTrgOps: { new(): tTrgOps };
 
 export type tUnitMultiplierEnum = ("" | "m" | "k" | "M" | "mu" | "y" | "z" | "a" | "f" | "p" | "n" | "c" | "d" | "da" | "h" | "G" | "T" | "P" | "E" | "Z" | "Y");
-export interface _tUnitMultiplierEnum extends Primitive._string { content: tUnitMultiplierEnum; }
+export interface _tUnitMultiplierEnum extends Primitive._string { value: tUnitMultiplierEnum; }
 
 export interface _tUnNaming extends _tBaseElement {
 	desc?: string;
