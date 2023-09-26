@@ -6,7 +6,7 @@ import * as Primitive from './xml-primitives';
 
 export interface BaseType {
 	TYPE_NAME?: string; //required from jsonix compiler
-	content?: any; //Array<Object>
+	value?: any; //Array<Object>
 	otherAttributes?: any;//Map<QName, string>;
 }
 export interface _LN0Type extends _tLN0 {}

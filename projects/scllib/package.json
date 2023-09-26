@@ -1,6 +1,6 @@
 {
   "name": "@opentemplate/scl-lib",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Library for IEC 61850 standard",
   "repository": {
     "type": "git",
@@ -32,6 +32,7 @@
     "lodash": "^4.17.21"
   },
   "dependencies": {
+    "cxsd": "^0.1.1",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
@@ -62,8 +63,8 @@
     "bump-minor": "grunt bump-minor",
     "bump-major": "grunt bump-major",
     "_cxsd": "cxsd",
-    "_xsd": "cxsd xsdfile",
-    "_jsonix": "docker run --rm -v \"$PWD\":/src/ -w /src adoptopenjdk/openjdk8:jre8u282-b08 java -jar src/lib/compiler/jsonix-schema-compiler-full.jar -d src/lib/compiler/mappings -p xsdfile",
+    "_xsd": "cxsd https://raw.githubusercontent.com/romdhanisam/TEST/cxsd/v2/SCL.xsd",
+    "_jsonix": "docker run --rm -v \"$PWD\":/src/ -w /src adoptopenjdk/openjdk8:jre8u282-b08 java -jar src/lib/compiler/jsonix-schema-compiler-full.jar -d src/lib/compiler/mappings2 -p https://raw.githubusercontent.com/romdhanisam/TEST/cxsd/v2/SCL.xsd",
     "_publish": "npm publish --access public"
   }
 }
