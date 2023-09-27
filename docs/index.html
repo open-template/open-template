@@ -1,0 +1,258 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@opentemplate/scl-lib documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="./" class="navbar-brand">@opentemplate/scl-lib documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<!--
+SPDX-FileCopyrightText: 2022 2023 Samir Romdhani <samir.romdhani1994@gmail.com>
+
+SPDX-License-Identifier: MIT license
+-->
+
+<h1>scl-lib</h1>
+<h3>Library for IEC 61850 standard</h3>
+<p><a href="https://github.com/open-template/open-template/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/@opentemplate/scl-lib?color=%234B97FE&logo=opentemplate" alt="license(MIT)" class="img-responsive"></a>
+<a href="https://www.npmjs.com/package/@opentemplate/scl-lib"><img src="https://img.shields.io/npm/v/@opentemplate/scl-lib?color=%234B97FE&logo=opentemplate" alt="npm (scoped)" class="img-responsive"></a>
+<a href="https://sonarcloud.io/summary/new_code?id=lib-opentemplate%3A%40opentemplate%2Fscl-lib"><img src="https://sonarcloud.io/api/project_badges/measure?project=lib-opentemplate%3A%40opentemplate%2Fscl-lib&metric=coverage" alt="Coverage" class="img-responsive"></a></p>
+<h2>Usage</h2>
+<h3>Install:</h3>
+<div><pre class="line-numbers"><code class="language-none">npm i &#64;opentemplate/scl-lib</code></pre></div><!--
+SPDX-FileCopyrightText: 2022 2023 Samir Romdhani <samir.romdhani1994@gmail.com>
+
+SPDX-License-Identifier: MIT license
+-->
+
+<h1>LibWorkspace</h1>
+<p>This project was generated with <a href="https://github.com/angular/angular-cli">Angular CLI</a> version 14.1.3.</p>
+<h1>scl-lib</h1>
+<h4>Library for IEC 61850 standard</h4>
+<p><a href="https://github.com/open-template/open-template/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/@opentemplate/scl-lib?color=%234B97FE&logo=opentemplate" alt="license(MIT)" class="img-responsive"></a>
+<a href="https://www.npmjs.com/package/@opentemplate/scl-lib"><img src="https://img.shields.io/npm/v/@opentemplate/scl-lib?color=%234B97FE&logo=opentemplate" alt="npm (scoped)" class="img-responsive"></a>
+<a href="https://sonarcloud.io/summary/new_code?id=lib-opentemplate%3A%40opentemplate%2Fscl-lib"><img src="https://sonarcloud.io/api/project_badges/measure?project=lib-opentemplate%3A%40opentemplate%2Fscl-lib&metric=coverage" alt="Coverage" class="img-responsive"></a></p>
+<!-- [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fromdhanisam%2Flib.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fromdhanisam%2Flib?ref=badge_shield) -->
+
+<h2>Usage</h2>
+<h3>Install:</h3>
+<div><pre class="line-numbers"><code class="language-none">npm i &#64;opentemplate/scl-lib</code></pre></div><h5>Context</h5>
+<p><img src="https://raw.githubusercontent.com/open-template/open-template/v0.2.2/assets/img/demo/jsonix-context.png" alt="context screenshot" class="img-responsive"></p>
+<h5>Usage</h5>
+<p>You can import the library files from TypeScript:</p>
+<div><pre class="line-numbers"><code class="language-TypeScript">import { ScllibService, _SCLType } from &#39;&#64;opentemplate/scl-lib&#39;;</code></pre></div><h5>Example</h5>
+<ul>
+<li>Marshal Document use case</li>
+</ul>
+<div><pre class="line-numbers"><code class="language-TypeScript">const namespaces: any = {
+  namespacePrefixes: {
+    &quot;http://www.iec.ch/61850/2003/SCL&quot;: &quot;&quot;,
+    &quot;http://www.w3.org/2001/XMLSchema&quot;: &quot;xs&quot;
+  },
+  mappingStyle : &quot;simplified&quot;
+};
+...
+constructor(private scllibService: ScllibService) {
+    this.scllibService.setContext(namespaces);
+}
+...
+const scl: _SCLType = {
+  release: 4,
+  revision: &quot;B&quot;,
+  version: &quot;2007&quot;,
+  header: {
+    id: uuid.v4()
+  }
+};
+...
+this.scllibService.marshalDocument({SCL: scl})</code></pre></div><p><img src="https://raw.githubusercontent.com/open-template/open-template/v0.2.2/assets/img/demo/marshall.png" alt="marshalDocument screenshot" class="img-responsive"></p>
+<ul>
+<li>_<strong>SCLType</strong> interface and others generated by <a href="https://github.com/highsource/jsonix">Jsonix</a> tool.</li>
+<li><strong>ScllibService</strong> use a Javascript compiler generated by the <a href="https://www.npmjs.com/package/cxsd">cxsd</a> tool.</li>
+</ul>
+<hr>
+<h3>API Reference:</h3>
+<h3><a href="https://github.com/highsource/jsonix">Jsonix</a></h3>
+<p>After fixing this <a href="https://github.com/highsource/jsonix/pull/266">https://github.com/highsource/jsonix/pull/266</a> we published <strong>3.0.0-next.0</strong> to npm as @opentempl/jsonix.</p>
+<ul>
+<li>Jsonix (JSON interfaces for XML) is a JavaScript library which allows you to convert between XML and JSON structures.</li>
+<li>With Jsonix you can parse XML into JSON (this process is called <em>unmarshalling</em>) or serialize JSON in XML form (this is called <em>marshalling</em>).</li>
+<li>These conversions are based on declarative XML/JSON mappings which can be written manually or generated from an XML Schema.</li>
+</ul>
+<p>Jsonix advantages:</p>
+<ul>
+<li>Strongly structured</li>
+<li>Type-safe</li>
+<li>Bidirectional</li>
+<li>(Optionally) XML Schema-driven</li>
+</ul>
+<h3><a href="https://www.npmjs.com/package/cxsd">cxsd</a></h3>
+<ul>
+<li>cxsd is a streaming XSD parser and XML parser generator for Node.js and
+(optionally but highly recommended) <a href="http://www.typescriptlang.org/">TypeScript</a>.
+It automatically downloads all referenced <code>.xsd</code> files and outputs two files for each defined namespace:<ul>
+<li><code>.js</code> JavaScript code for Node.js containing a compact state machine table for the <a href="https://github.com/charto/cxml">cxml</a> parser.</li>
+<li><code>.d.ts</code> TypeScript definition with JSDoc comments to help editors with tab completion, type verification and tooltips.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3>Supported Versions</h3>
+<p>Information about supported @opentempl/scl-lib versions.</p>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th>Version</th>
+<th>Supported</th>
+<th>Scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;= 0.1.24</td>
+<td>:x:</td>
+<td>opentempl</td>
+</tr>
+<tr>
+<td>&gt; 0.1.24 &amp; &lt;= 0.1.32</td>
+<td>:white_check_mark:</td>
+<td>opentempl</td>
+</tr>
+</tbody>
+</table>
+<p>We published 0.2.0 to npm as @opentemplate/scl-lib and will continue to publish updates there.</p>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th>Version</th>
+<th>Supported</th>
+<th>Scope</th>
+<th>Scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&gt;= 0.2.0</td>
+<td>:white_check_mark:</td>
+<td>opentemplate</td>
+<td>Angular 14</td>
+</tr>
+<tr>
+<td>= 1.0.5</td>
+<td>:white_check_mark:</td>
+<td>opentemplate</td>
+<td>Angular 15</td>
+</tr>
+<tr>
+<td>&gt;= 1.0.6</td>
+<td>:white_check_mark:</td>
+<td>opentemplate</td>
+<td>Angular 16</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+
+       <script src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
