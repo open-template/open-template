@@ -38,13 +38,13 @@ jobs:
         continue-on-error: true
         run: npm list
       - name: Install global dependencies 🔧
-        run: npm ci --force
+        run: npm i --force
         # LIB
       - name: Install library dependencies 🔧
         if: ${{ startsWith(github.ref_name, 'v') }}
         run: |
           cd projects/scllib 
-          npm ci --force
+          npm i --force
       - name: Build library🔖
         if: ${{ startsWith(github.ref_name, 'v') }}
         run: npm run build-lib

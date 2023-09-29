@@ -44,9 +44,9 @@ jobs:
         run: npm list
       - name: Install dependencies 🔧🔧
         run: |
-          npm ci --force
+          npm i --force
           cd projects/scllib 
-          npm ci --force
+          npm i --force
       - name: Test ⛳
         run: |
           cd projects/scllib 
