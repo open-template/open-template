@@ -7,7 +7,7 @@
     "declaration": true,
     "declarationMap": true,
     "inlineSources": true,
-    "types": [""],
+    "types": ["node"],
     "module": "es2015",
     "paths": {
       "@Model/*": ["src/lib/xmlns/*"]
