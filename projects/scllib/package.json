@@ -1,6 +1,6 @@
 {
   "name": "@opentemplate/scl-lib",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Library for IEC 61850 standard",
   "repository": {
     "type": "git",
@@ -27,8 +27,8 @@
     "registry": "https://registry.npmjs.org"
   },
   "peerDependencies": {
-    "@angular/common": "^16.2.3",
-    "@angular/core": "^16.2.3",
+    "@angular/common": "^16.0.0",
+    "@angular/core": "^16.0.0",
     "lodash": "^4.17.21"
   },
   "dependencies": {
@@ -61,6 +61,7 @@
     "bump-patch": "grunt bump-patch",
     "bump-minor": "grunt bump-minor",
     "bump-major": "grunt bump-major",
+    "compodoc": "npx compodoc -p tsconfig.doc.json",
     "_cxsd": "cxsd",
     "_xsd": "cxsd xsdfile //stream",
     "_jsonix": "docker run --rm -v \"$PWD\":/src/ -w /src adoptopenjdk/openjdk8:jre8u282-b08 java -jar src/lib/compiler/jsonix-schema-compiler-full.jar -d src/lib/compiler/mappings2 -p xsdfile //endure",
