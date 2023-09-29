@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2022 Samir Romdhani <samir.romdhani1994@gmail.com>
-# 
+#
 # SPDX-License-Identifier: MIT license
 
 name: Test NPM Library
@@ -37,16 +37,16 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-            
+
       - if: ${{ steps.cache-npm.outputs.cache-hit == 'false' }}
         name: List the state of node modules
         continue-on-error: true
         run: npm list
       - name: Install dependencies 🔧🔧
         run: |
-          npm ci
+          npm ci --force
           cd projects/scllib 
-          npm ci
+          npm ci --force
       - name: Test ⛳
         run: |
           cd projects/scllib 

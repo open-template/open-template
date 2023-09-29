@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2022 Samir Romdhani <samir.romdhani1994@gmail.com>
-# 
+#
 # SPDX-License-Identifier: MIT license
 
 name: Publish to NPM Registry
@@ -32,20 +32,20 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-            
+
       - if: ${{ steps.cache-npm.outputs.cache-hit == 'false' }}
         name: List the state of node modules
         continue-on-error: true
         run: npm list
       - name: Install global dependencies 🔧
-        run: npm ci
+        run: npm ci --force
         # LIB
       - name: Install library dependencies 🔧
         if: ${{ startsWith(github.ref_name, 'v') }}
         run: |
           cd projects/scllib 
-          npm ci
-      - name: Build library🔖 
+          npm ci --force
+      - name: Build library🔖
         if: ${{ startsWith(github.ref_name, 'v') }}
         run: npm run build-lib
       - name: Publish package on NPM 🚣 📦
@@ -61,7 +61,7 @@ jobs:
         run: |
           cd projects/scllib-nestjs-way
           npm ci
-      - name: Build NestJS library 🔖 
+      - name: Build NestJS library 🔖
         if: ${{ startsWith(github.ref_name, 'nest') }}
         run: |
           cd projects/scllib-nestjs-way
@@ -79,7 +79,7 @@ jobs:
         run: |
           cd projects/scllib-adapter-way
           npm ci
-      - name: Build Adapter-way library 🔖 
+      - name: Build Adapter-way library 🔖
         if: ${{ startsWith(github.ref_name, 'adap') }}
         run: |
           cd projects/scllib-adapter-way
