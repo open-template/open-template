@@ -1,6 +1,6 @@
 {
   "name": "lib-opentemplate",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "license": "MIT",
   "author": {
     "name": "Samir Romdhani",
@@ -53,8 +53,8 @@
     "zone.js": "~0.13.3"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "16.0.0",
-    "@angular/cli": "16.0.0",
+    "@angular-devkit/build-angular": "^16.2.4",
+    "@angular/cli": "^16.2.4",
     "@angular/compiler-cli": "16.2.6",
     "@types/estree": "^1.0.0",
     "@types/jest": "^27.5.2",
